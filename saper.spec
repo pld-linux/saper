@@ -5,11 +5,6 @@ Version:	0.28
 Release:	1
 License:	GPL/freeware
 Group:		X11/Applications/Multimedia
-Group(de):	X11/Applikationen/Multimedia
-Group(es):	X11/Aplicaciones/Multimedia
-Group(fr):	X11/Applications/Multimédia
-Group(pl):	X11/Aplikacje/Multimedia
-Group(pt):	X11/Aplicações/Multimedia
 Source0:	http://asma.dspaudio.com/bin/%{name}-%{version}-src.tar.bz2
 Patch0:		%{name}-system-libsap.patch
 Patch1:		%{name}-ac-am.patch
