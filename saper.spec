@@ -2,7 +2,7 @@ Summary:	Qt-based SAP music files player
 Summary(pl):	Oparty na Qt odtwarzacz plików muzycznych SAP
 Name:		saper
 Version:	0.28
-Release:	1
+Release:	2
 License:	GPL/Freeware
 Group:		X11/Applications/Multimedia
 Source0:	http://asma.dspaudio.com/bin/%{name}-%{version}-src.tar.bz2
@@ -43,12 +43,10 @@ install -d $RPM_BUILD_ROOT%{_bindir}
 install saper/saper $RPM_BUILD_ROOT%{_bindir}
 mv -f saper/stilview/README.txt README.stilview
 
-gzip -9nf AUTHORS README README.stilview
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz saper/docs/en/*.html
+%doc AUTHORS README README.stilview saper/docs/en/*.html
 %attr(755,root,root) %{_bindir}/saper
