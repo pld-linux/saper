@@ -8,6 +8,7 @@ Group:		X11/Applications/Multimedia
 Source0:	http://asma.dspaudio.com/bin/%{name}-%{version}-src.tar.bz2
 Patch0:		%{name}-system-libsap.patch
 Patch1:		%{name}-ac-am.patch
+Patch2:		%{name}-gcc3.patch
 URL:		http://asma.dspaudio.com/
 BuildRequires:	libsap-devel
 BuildRequires:	qt-devel
@@ -26,6 +27,7 @@ Oparty na Qt odtwarzacz plików muzycznych SAP (znanych z Atari XL/XE).
 %setup -q -n %{name}-%{version}-src
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 aclocal
