@@ -10,6 +10,8 @@ Patch0:		%{name}-system-libsap.patch
 Patch1:		%{name}-ac-am.patch
 Patch2:		%{name}-gcc3.patch
 URL:		http://asma.dspaudio.com/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libsap-devel
 BuildRequires:	qt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,7 +32,7 @@ Oparty na Qt odtwarzacz plików muzycznych SAP (znanych z Atari XL/XE).
 %patch2 -p1
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
