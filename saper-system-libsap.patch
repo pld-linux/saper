@@ -1,0 +1,32 @@
+diff -Nur saper-0.28-src.orig/saper/Makefile.am saper-0.28-src/saper/Makefile.am
+--- saper-0.28-src.orig/saper/Makefile.am	Sun Dec  2 01:36:43 2001
++++ saper-0.28-src/saper/Makefile.am	Tue Feb  5 20:44:34 2002
+@@ -1,13 +1,13 @@
+ ####### kdevelop will overwrite this part!!! (begin)##########
+ bin_PROGRAMS = saper
+ saper_SOURCES = StilDialog.cpp config.cpp about.cpp saper.cpp main.cpp 
+-SOURCES = stilview/stilcomm.cpp stilview/stil.cpp saplib/sapPokey.cpp saplib/sapEngine.cpp saplib/sapCpu.cpp saplib/pokey1.cpp saplib/pokey0.cpp StilDialog.cpp config.cpp about.cpp saper.cpp main.cpp 
++SOURCES = stilview/stilcomm.cpp stilview/stil.cpp StilDialog.cpp config.cpp about.cpp saper.cpp main.cpp 
+ INTERFACES = 
+ TRANSLATIONS = 
+ KDE_OPTIONS = qtonly
+-saper_LDADD   = ./saplib/libsaplib.a ./stilview/libstilview.a  $(LIB_QT) $(LIBSOCKET)
++saper_LDADD   = ./stilview/libstilview.a -lsap $(LIB_QT) $(LIBSOCKET)
+ 
+-SUBDIRS = docs saplib stilview 
++SUBDIRS = docs stilview 
+ 
+ EXTRA_DIST = main.cpp saper.cpp saper.h about.cpp about.h aboutgfx.h sapergfx.h saper config.cpp config.h StilDialog.cpp StilDialog.h mainthread.h 
+ 
+diff -Nur saper-0.28-src.orig/saper/main.cpp saper-0.28-src/saper/main.cpp
+--- saper-0.28-src.orig/saper/main.cpp	Mon Jan 28 20:19:49 2002
++++ saper-0.28-src/saper/main.cpp	Tue Feb  5 20:45:39 2002
+@@ -41,7 +41,7 @@
+ #include <string.h>
+ 
+ #include "stilview/stil.h"
+-#include "saplib/sapLib.h"
++#include <libsap.h>
+ 
+ #include "saper.h"
+ 

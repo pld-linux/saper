@@ -1,0 +1,87 @@
+diff -Nur saper-0.28-src.orig/Makefile.am saper-0.28-src/Makefile.am
+--- saper-0.28-src.orig/Makefile.am	Sun Dec  2 01:36:40 2001
++++ saper-0.28-src/Makefile.am	Tue Feb  5 21:59:41 2002
+@@ -2,7 +2,7 @@
+ 
+ SUBDIRS = saper 
+ 
+-EXTRA_DIST = saper.kdevprj AUTHORS COPYING ChangeLog INSTALL README TODO 
++EXTRA_DIST = saper.kdevprj AUTHORS COPYING ChangeLog INSTALL README TODO admin
+ 
+ ####### kdevelop will overwrite this part!!! (end)############
+ # not a GNU package. You can remove this line, if 
+@@ -24,8 +24,6 @@
+ 	$(MAKE) -f admin/Makefile.common package-messages
+ 	$(MAKE) -C po merge
+ 
+-EXTRA_DIST = admin 
+-
+ dist-hook:
+ 	cd $(top_distdir) && perl admin/am_edit -padmin
+ 	cd $(top_distdir) && $(MAKE) -f admin/Makefile.common subdirs
+diff -Nur saper-0.28-src.orig/configure.in saper-0.28-src/configure.in
+--- saper-0.28-src.orig/configure.in	Sun Dec  2 01:36:39 2001
++++ saper-0.28-src/configure.in	Tue Feb  5 22:00:23 2002
+@@ -30,7 +30,6 @@
+ AC_ENABLE_STATIC(no)
+ KDE_PROG_LIBTOOL
+ 
+-AC_REQUIRE([KDE_CHECK_EXTRA_LIBS])
+ all_libraries="$all_libraries $USER_LDFLAGS"
+ all_includes="$all_includes $USER_INCLUDES"
+ AC_SUBST(all_includes)
+--- saper-0.28-src.orig/acinclude.m4	Sun Dec  2 01:42:33 2001
++++ saper-0.28-src/acinclude.m4	Tue Feb  5 22:04:04 2002
+@@ -2475,32 +2475,10 @@
+ dnl From Jim Meyering.
+ dnl FIXME: migrate into libit.
+ 
+-AC_DEFUN(AM_FUNC_OBSTACK,
+-[AC_CACHE_CHECK([for obstacks], am_cv_func_obstack,
+- [AC_TRY_LINK([#include "obstack.h"],
+-	      [struct obstack *mem;obstack_free(mem,(char *) 0)],
+-	      am_cv_func_obstack=yes,
+-	      am_cv_func_obstack=no)])
+- if test $am_cv_func_obstack = yes; then
+-   AC_DEFINE(HAVE_OBSTACK)
+- else
+-   LIBOBJS="$LIBOBJS obstack.o"
+- fi
+-])
+ 
+ dnl From Jim Meyering.  Use this if you use the GNU error.[ch].
+ dnl FIXME: Migrate into libit
+ 
+-AC_DEFUN(AM_FUNC_ERROR_AT_LINE,
+-[AC_CACHE_CHECK([for error_at_line], am_cv_lib_error_at_line,
+- [AC_TRY_LINK([],[error_at_line(0, 0, "", 0, "");],
+-              am_cv_lib_error_at_line=yes,
+-	      am_cv_lib_error_at_line=no)])
+- if test $am_cv_lib_error_at_line = no; then
+-   LIBOBJS="$LIBOBJS error.o"
+- fi
+- AC_SUBST(LIBOBJS)dnl
+-])
+ 
+ # Macro to add for using GNU gettext.
+ # Ulrich Drepper <drepper@cygnus.com>, 1995.
+--- saper-0.28-src.orig/saper/Makefile.am	Tue Feb  5 21:59:28 2002
++++ saper-0.28-src/saper/Makefile.am	Tue Feb  5 22:35:18 2002
+@@ -1,6 +1,6 @@
+ ####### kdevelop will overwrite this part!!! (begin)##########
+ bin_PROGRAMS = saper
+-saper_SOURCES = StilDialog.cpp config.cpp about.cpp saper.cpp main.cpp 
++saper_SOURCES = StilDialog.cpp config.cpp about.cpp saper.cpp main.cpp StilDialog.moc.cpp config.moc.cpp about.moc.cpp saper.moc.cpp
+ SOURCES = stilview/stilcomm.cpp stilview/stil.cpp StilDialog.cpp config.cpp about.cpp saper.cpp main.cpp 
+ INTERFACES = 
+ TRANSLATIONS = 
+@@ -33,7 +33,7 @@
+ DISTCLEANFILES = $(saper_METASOURCES)
+ 
+ # this is to enable Qt behavoir of am_edit
+-KDE_OPTIONS = qtonly
+-
+ 
++%.moc.cpp : %.h
++	moc $< > $@
+ 
