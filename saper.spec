@@ -6,6 +6,7 @@ Release:	2
 License:	GPL/Freeware
 Group:		X11/Applications/Sound
 Source0:	http://asma.dspaudio.com/bin/%{name}-%{version}-src.tar.bz2
+# Source0-md5:	b83162cd134de6de23192acbf0705c2d
 Patch0:		%{name}-system-libsap.patch
 Patch1:		%{name}-ac-am.patch
 Patch2:		%{name}-gcc3.patch
