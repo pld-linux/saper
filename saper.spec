@@ -4,7 +4,7 @@ Name:		saper
 Version:	0.28
 Release:	2
 License:	GPL/Freeware
-Group:		X11/Applications/Multimedia
+Group:		X11/Applications/Sound
 Source0:	http://asma.dspaudio.com/bin/%{name}-%{version}-src.tar.bz2
 Patch0:		%{name}-system-libsap.patch
 Patch1:		%{name}-ac-am.patch
