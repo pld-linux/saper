@@ -30,7 +30,7 @@ Oparty na Qt odtwarzacz plików muzycznych SAP (znanych z Atari XL/XE).
 %build
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure \
 	--enable-mt
 
