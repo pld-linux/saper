@@ -16,8 +16,6 @@ BuildRequires:	libsap-devel
 BuildRequires:	qt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 Qt-based SAP music files (known from Atari XL/XE) player.
