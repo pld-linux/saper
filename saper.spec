@@ -3,7 +3,7 @@ Summary(pl):	Oparty na Qt odtwarzacz plików muzycznych SAP
 Name:		saper
 Version:	0.28
 Release:	1
-License:	GPL/freeware
+License:	GPL/Freeware
 Group:		X11/Applications/Multimedia
 Source0:	http://asma.dspaudio.com/bin/%{name}-%{version}-src.tar.bz2
 Patch0:		%{name}-system-libsap.patch
