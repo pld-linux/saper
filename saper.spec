@@ -2,7 +2,7 @@ Summary:	Qt-based SAP music files player
 Summary(pl):	Oparty na Qt odtwarzacz plików muzycznych SAP
 Name:		saper
 Version:	0.28
-Release:	2
+Release:	3
 License:	GPL/Freeware
 Group:		X11/Applications/Sound
 Source0:	http://asma.dspaudio.com/bin/%{name}-%{version}-src.tar.bz2
@@ -16,7 +16,6 @@ BuildRequires:	automake
 BuildRequires:	libsap-devel
 BuildRequires:	qt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Qt-based SAP music files (known from Atari XL/XE) player.
