@@ -1,6 +1,5 @@
-diff -Nur saper-0.28-src.orig/saper/Makefile.am saper-0.28-src/saper/Makefile.am
---- saper-0.28-src.orig/saper/Makefile.am	Sun Dec  2 01:36:43 2001
-+++ saper-0.28-src/saper/Makefile.am	Tue Feb  5 20:44:34 2002
+--- saper-0.3-src/saper/Makefile.am.orig	2002-05-30 19:16:36.000000000 +0200
++++ saper-0.3-src/saper/Makefile.am	2006-10-29 14:16:35.772068000 +0100
 @@ -1,13 +1,13 @@
  ####### kdevelop will overwrite this part!!! (begin)##########
  bin_PROGRAMS = saper
@@ -13,8 +12,8 @@ diff -Nur saper-0.28-src.orig/saper/Makefile.am saper-0.28-src/saper/Makefile.am
 -saper_LDADD   = ./saplib/libsaplib.a ./stilview/libstilview.a  $(LIB_QT) $(LIBSOCKET)
 +saper_LDADD   = ./stilview/libstilview.a -lsap $(LIB_QT) $(LIBSOCKET)
  
--SUBDIRS = docs saplib stilview 
-+SUBDIRS = docs stilview 
+-SUBDIRS = saplib stilview
++SUBDIRS = stilview
  
  EXTRA_DIST = main.cpp saper.cpp saper.h about.cpp about.h aboutgfx.h sapergfx.h saper config.cpp config.h StilDialog.cpp StilDialog.h mainthread.h 
  

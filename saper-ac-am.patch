@@ -19,10 +19,9 @@ diff -Nur saper-0.28-src.orig/Makefile.am saper-0.28-src/Makefile.am
  dist-hook:
  	cd $(top_distdir) && perl admin/am_edit -padmin
  	cd $(top_distdir) && $(MAKE) -f admin/Makefile.common subdirs
-diff -Nur saper-0.28-src.orig/configure.in saper-0.28-src/configure.in
---- saper-0.28-src.orig/configure.in	Sun Dec  2 01:36:39 2001
-+++ saper-0.28-src/configure.in	Tue Feb  5 22:00:23 2002
-@@ -30,7 +30,6 @@
+--- saper-0.3-src/configure.in.orig	2001-12-02 01:36:39.000000000 +0100
++++ saper-0.3-src/configure.in	2006-10-29 14:22:11.121026000 +0100
+@@ -32,7 +32,6 @@
  AC_ENABLE_STATIC(no)
  KDE_PROG_LIBTOOL
  
@@ -30,6 +29,12 @@ diff -Nur saper-0.28-src.orig/configure.in saper-0.28-src/configure.in
  all_libraries="$all_libraries $USER_LDFLAGS"
  all_includes="$all_includes $USER_INCLUDES"
  AC_SUBST(all_includes)
+@@ -53,4 +52,4 @@
+ KDE_CREATE_SUBDIRSLIST
+ 
+ dnl add here all your Makefiles. This are created by configure
+-AC_OUTPUT(Makefile saper/Makefile saper/docs/Makefile saper/docs/en/Makefile saper/saplib/Makefile saper/stilview/Makefile )
++AC_OUTPUT(Makefile saper/Makefile saper/stilview/Makefile )
 --- saper-0.28-src.orig/acinclude.m4	Sun Dec  2 01:42:33 2001
 +++ saper-0.28-src/acinclude.m4	Tue Feb  5 22:04:04 2002
 @@ -2475,32 +2475,10 @@
