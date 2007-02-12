@@ -1,5 +1,5 @@
 Summary:	Qt-based SAP music files player
-Summary(pl):	Oparty na Qt odtwarzacz plików muzycznych SAP
+Summary(pl.UTF-8):   Oparty na Qt odtwarzacz plikÃ³w muzycznych SAP
 Name:		saper
 Version:	0.3
 Release:	1
@@ -20,8 +20,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Qt-based SAP music files (known from Atari XL/XE) player.
 
-%description -l pl
-Oparty na Qt odtwarzacz plików muzycznych SAP (znanych z Atari XL/XE).
+%description -l pl.UTF-8
+Oparty na Qt odtwarzacz plikÃ³w muzycznych SAP (znanych z Atari XL/XE).
 
 %prep
 %setup -q -n %{name}-%{version}-src
