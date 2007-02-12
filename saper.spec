@@ -1,5 +1,5 @@
 Summary:	Qt-based SAP music files player
-Summary(pl.UTF-8):   Oparty na Qt odtwarzacz plików muzycznych SAP
+Summary(pl.UTF-8):	Oparty na Qt odtwarzacz plików muzycznych SAP
 Name:		saper
 Version:	0.3
 Release:	1
